@@ -113,6 +113,53 @@ const data = [
 
 */
 
-function createArticle(article, title, content, expandButton) {
-  
+//article factory
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+  //title
+  const artTitle = document.createElement('h2');
+  artTitle.classList.add('title');
+  artTitle.textContent = title;
+
+  //date
+  const artDate = document.createElement('p');
+  artDate.classList.add('date');
+  artDate.textContent = date;
+
+  //first paragraph
+  const fPara = document.createElement('p');
+  fPara.classList.add('first';
+  fPara.textContent = firstParagraph;
+
+  //second paragraph
+  const sPara = document.createElement('p');
+  sPara.classlist.add('second');
+  sPara.textContent = secondParagraph;
+
+  //third paragraph
+  const tpara = document.createElement('P');
+  tpara.classList.add('third');
+  tpara.textContent = thirdParagraph;
+
+  //tying the variables together to create a article
+  const article = document.createElement('div');
+  article.classList.add('article');
+  article.appendChild(artTitle);
+  article.appendChild(artDate);
+  article.appendChild(fpara);
+  article.appendChild(spara);
+  article.appendChild(tpara);
+
+  return article;
 }
+
+//selecting the div for the article to go in
+const container = document.querySelector('.header');
+
+//iterate over the article data with the forEach
+//method using the article factory function and
+//add it to the div.
+
+data.forEach(data => {
+  container.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
