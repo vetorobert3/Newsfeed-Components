@@ -142,15 +142,21 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   tPara.textContent = thirdParagraph;
 
   //tying the variables together to create a article
-  const article = document.createElement('span');
-  article.classList.add('expandButton');
-  article.appendChild(artTitle);
-  article.appendChild(artDate);
-  article.appendChild(fPara);
-  article.appendChild(sPara);
-  article.appendChild(tPara);
+  const newArticle = document.createElement('div');
+  newArticle.classList.add('article');
+  newArticle.appendChild(artTitle);
+  newArticle.appendChild(artDate);
+  newArticle.appendChild(fPara);
+  newArticle.appendChild(sPara);
+  newArticle.appendChild(tPara);
 
-  return article;
+//   newArticle.addEventListener('click', (e) => {
+//     buttonOpen.classList.toggle('hide-btn');
+//     buttonClose.classList.toggle('hide-btn');
+//     panelContent.classList.toggle('toggle-on');
+// })
+
+  return newArticle;
 }
 
 //selecting the div for the article to go in
@@ -166,5 +172,5 @@ data.forEach(data => {
 
 //event handler for span
 article.addEventListener('article-open', (event) => {
-  
+
 })
