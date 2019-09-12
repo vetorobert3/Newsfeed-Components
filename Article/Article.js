@@ -141,6 +141,10 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   tPara.classList.add('third');
   tPara.textContent = thirdParagraph;
 
+  //span element
+  const expandB = document.createElement('span');
+  expandB.classList.add('expandButton');
+
   //tying the variables together to create a article
   const newArticle = document.createElement('div');
   newArticle.classList.add('article');
@@ -149,6 +153,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   newArticle.appendChild(fPara);
   newArticle.appendChild(sPara);
   newArticle.appendChild(tPara);
+  newArticle.appendChild(expandB);
 
 //   newArticle.addEventListener('click', (e) => {
 //     buttonOpen.classList.toggle('hide-btn');
@@ -171,6 +176,6 @@ data.forEach(data => {
 });
 
 //event handler for span
-article.addEventListener('article-open', (event) => {
-
-})
+// article.addEventListener('article-open', (event) => {
+//
+// })
