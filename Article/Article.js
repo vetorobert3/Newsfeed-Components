@@ -156,22 +156,9 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   newArticle.appendChild(tPara);
   newArticle.appendChild(expandB);
 
-  expandB.addEventListener('click', e => {
-    if (div.classList.contains('article-open')){
-    div.classList.remove('article-open');
-    span.textContent = "Show Article";
-    }
-    else {
-      div.classList.add('article-open');
-      span.textContent = "Hide Article";
-      }
+  expandB.addEventListener('click', (event) => {
+    newArticle.classList.toggle('article-open');
   });
-
-//   newArticle.addEventListener('click', (e) => {
-//     buttonOpen.classList.toggle('hide-btn');
-//     buttonClose.classList.toggle('hide-btn');
-//     panelContent.classList.toggle('toggle-on');
-// })
 
   return newArticle;
 }
