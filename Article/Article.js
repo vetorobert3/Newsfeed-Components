@@ -144,6 +144,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   //span element
   const expandB = document.createElement('span');
   expandB.classList.add('expandButton');
+  expandB.textContent = "Show Article";
 
   //tying the variables together to create a article
   const newArticle = document.createElement('div');
@@ -154,6 +155,17 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   newArticle.appendChild(sPara);
   newArticle.appendChild(tPara);
   newArticle.appendChild(expandB);
+
+  expandB.addEventListener('click', e => {
+    if (div.classList.contains('article-open')){
+    div.classList.remove('article-open');
+    span.textContent = "Show Article";
+    }
+    else {
+      div.classList.add('article-open');
+      span.textContent = "Hide Article";
+      }
+  });
 
 //   newArticle.addEventListener('click', (e) => {
 //     buttonOpen.classList.toggle('hide-btn');
